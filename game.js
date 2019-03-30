@@ -7,13 +7,18 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).keypress(function() {
+$("h1").text("Click the button below to start the game");
+
+$("#start").text("Click here to start");
+
+$("#start").click(function() {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
 });
+
 
 $(".btn").click(function() {
 
@@ -50,7 +55,7 @@ function checkAnswer(currentLevel) {
         $("body").removeClass("game-over");
       }, 200);
 
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+      $("#level-title").text("Game Over, Click button to Restart");
 
       //2. Call startOver() if the user gets the sequence wrong.
       startOver();
