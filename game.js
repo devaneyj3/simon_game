@@ -7,9 +7,25 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$("h1").text("Click the button below to start the game");
+$("#level-title").text("Click the button below to start the game");
 
 $("#start").text("Click here to start");
+
+
+
+$("#submitName").click(function() {
+
+  var playerOne = ($("#playerOne").val());
+  var playerTwo = ($("#playerTwo").val());
+  $("#playerOneName").text(playerOne);
+  $("#playerTwoName").text(playerTwo);
+  $(".players").hide()
+
+  $("#playerOneHighScore").text("HighScore");
+  $("#playerTwoHighScore").text("HighScore");
+  
+  
+})
 
 $("#start").click(function() {
   if (!started) {
