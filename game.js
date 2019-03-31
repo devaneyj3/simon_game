@@ -7,9 +7,16 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
+var playerOneScore = 0;
+var playerTwoScore = 0;
+
+var playerOneHighScore = 0;
+var playerTwoHighScore = 0;
+
 $("#level-title").text("Click the button below to start the game");
 
 $("#start").text("Click here to start");
+
 
 
 
@@ -21,10 +28,7 @@ $("#submitName").click(function() {
   $("#playerTwoName").text(playerTwo);
   $(".players").hide()
 
-  $("#playerOneHighScore").text("HighScore");
-  $("#playerTwoHighScore").text("HighScore");
-  
-  
+  showScores();
 })
 
 $("#start").click(function() {
@@ -53,12 +57,15 @@ function checkAnswer(currentLevel) {
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
 
       console.log("success");
+          playerOneScore+=1000;
+          updateHighScore();
 
       if (userClickedPattern.length === gamePattern.length){
         setTimeout(function () {
           nextSequence();
         }, 1000);
       }
+      showScores();
 
     } else {
 
@@ -73,7 +80,6 @@ function checkAnswer(currentLevel) {
 
       $("#level-title").text("Game Over, Click button to Restart");
 
-      //2. Call startOver() if the user gets the sequence wrong.
       startOver();
     }
 
@@ -83,6 +89,8 @@ function nextSequence() {
 
   userClickedPattern = [];
   level++;
+
+
   $("#level-title").text("Level " + level);
 
   var randomNumber = Math.floor(Math.random() * 4);
@@ -110,6 +118,30 @@ function startOver() {
 
   //3. Inside this function, you'll need to reset the values of level, gamePattern and started variables.
   level = 0;
+  playerOneScore = 0;
+  playerTwoScore = 0
   gamePattern = [];
   started = false;
+}
+
+//show the players scores
+function showScores() {
+  $("#playerOneScore").text("Score");
+  $("#playerTwoScore").text("Score");
+
+  $(".playerOneScore").text(playerOneScore);
+  $(".playerTwoScore").text(playerTwoScore);  
+
+  $("#playerOneHighScore").text("High Score");
+  $("#playerTwoHighScore").text("High Score");
+
+  $(".playerOneHighScore").text(playerOneHighScore);
+  $(".playerTwoHignScore").text(playerTwoHighScore);
+}
+
+function updateHighScore() {
+  if(playerOneScore > playerOneHighScore)
+    {
+      playerOneHighScore = playerOneScore;
+    }
 }
