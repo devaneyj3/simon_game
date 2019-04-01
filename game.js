@@ -122,6 +122,7 @@ function startOver() {
   playerTwoScore = 0
   gamePattern = [];
   started = false;
+  showScores();
 }
 
 //show the players scores
