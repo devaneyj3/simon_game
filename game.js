@@ -12,9 +12,12 @@ var playerTwoScore = 0;
 var playerOneHighScore = 0;
 var playerTwoHighScore = 0;
 
-$("#level-title").text("Click the button below to start the game");
+var levelHeading = $(".level-title");
+var start = $(".start");
 
-$("#start").text("Click here to start");
+$(levelHeading).text("Click the button below to start the game");
+
+$(start).text("Click here to start");
 
 $("#submitName").click(function() {
 
@@ -27,9 +30,9 @@ $("#submitName").click(function() {
   showScores();
 })
 
-$(".start").click(function() {
+$(start).click(function() {
   if (!started) {
-    $(".level-title").text("Level " + level);
+    $(levelHeading).text("Level " + level);
     nextSequence();
     started = true;
   }
@@ -71,7 +74,7 @@ function checkAnswer(currentLevel) {
       $("body").removeClass("game-over");
     }, 200);
 
-    $(".level-title").text("Game Over, Click button to Restart");
+    $(levelHeading).text("Game Over, Click button to Restart");
 
     $(".finishedLevel").html("<br><p>You finished on level " + level + "</p>");
 
@@ -87,7 +90,7 @@ function nextSequence() {
   level++;
 
 
-  $(".level-title").text("Level " + level);
+  $(levelHeading).text("Level " + level);
 
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColour = buttonColours[randomNumber];
