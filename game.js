@@ -1,4 +1,3 @@
-
 var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
@@ -17,9 +16,6 @@ $("#level-title").text("Click the button below to start the game");
 
 $("#start").text("Click here to start");
 
-
-
-
 $("#submitName").click(function() {
 
   var playerOne = ($("#playerOne").val());
@@ -31,9 +27,9 @@ $("#submitName").click(function() {
   showScores();
 })
 
-$("#start").click(function() {
+$(".start").click(function() {
   if (!started) {
-    $("#level-title").text("Level " + level);
+    $(".level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
@@ -48,50 +44,50 @@ $(".btn").click(function() {
   playSound(userChosenColour);
   animatePress(userChosenColour);
 
-  checkAnswer(userClickedPattern.length-1);
+  checkAnswer(userClickedPattern.length - 1);
 });
 
 
 function checkAnswer(currentLevel) {
 
-    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
 
-      console.log("success");
-          playerOneScore+=1000;
-          updateHighScore();
+    playerOneScore += 1000;
+    updateHighScore();
 
-      if (userClickedPattern.length === gamePattern.length){
-        setTimeout(function () {
-          nextSequence();
-        }, 1000);
-      }
-      showScores();
-
-    } else {
-
-      console.log("wrong");
-
-      playSound("wrong");
-
-      $("body").addClass("game-over");
-      setTimeout(function () {
-        $("body").removeClass("game-over");
-      }, 200);
-
-      $("#level-title").text("Game Over, Click button to Restart");
-
-      startOver();
+    if (userClickedPattern.length === gamePattern.length) {
+      setTimeout(function() {
+        nextSequence();
+      }, 1000);
     }
+    showScores();
+
+  } else {
+
+    playSound("wrong");
+
+    $("body").addClass("game-over");
+    setTimeout(function() {
+      $("body").removeClass("game-over");
+    }, 200);
+
+    $(".level-title").text("Game Over, Click button to Restart");
+
+    $(".finishedLevel").html("<br><p>You finished on level " + level + "</p>");
+
+    startOver();
+  }
 
 }
 
+//increments level and chooses Math class to pick random pattern
 function nextSequence() {
 
   userClickedPattern = [];
   level++;
 
 
-  $("#level-title").text("Level " + level);
+  $(".level-title").text("Level " + level);
 
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColour = buttonColours[randomNumber];
@@ -104,19 +100,19 @@ function nextSequence() {
 function playSound(name) {
   var audio = new Audio("sounds/" + name + ".mp3");
   audio.play();
+
 }
 
+//Once user presses a button, animated that button
 function animatePress(currentColor) {
   $("#" + currentColor).addClass("pressed");
-  setTimeout(function () {
+  setTimeout(function() {
     $("#" + currentColor).removeClass("pressed");
   }, 100);
 }
 
-//1. Create a new function called startOver().
+//Resets everything
 function startOver() {
-
-  //3. Inside this function, you'll need to reset the values of level, gamePattern and started variables.
   level = 0;
   playerOneScore = 0;
   playerTwoScore = 0
@@ -131,7 +127,7 @@ function showScores() {
   $("#playerTwoScore").text("Score");
 
   $(".playerOneScore").text(playerOneScore);
-  $(".playerTwoScore").text(playerTwoScore);  
+  $(".playerTwoScore").text(playerTwoScore);
 
   $("#playerOneHighScore").text("High Score");
   $("#playerTwoHighScore").text("High Score");
@@ -141,8 +137,7 @@ function showScores() {
 }
 
 function updateHighScore() {
-  if(playerOneScore > playerOneHighScore)
-    {
-      playerOneHighScore = playerOneScore;
-    }
+  if (playerOneScore > playerOneHighScore) {
+    playerOneHighScore = playerOneScore;
+  }
 }
