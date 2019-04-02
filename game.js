@@ -15,20 +15,13 @@ var playerTwoHighScore = 0;
 var levelHeading = $(".level-title");
 var start = $(".start");
 
+var playerOneNameField = localStorage.getItem("NamePlayerOne");
+var playerTwoNameField = localStorage.getItem("NamePlayerTwo");
+
 $(levelHeading).text("Click the button below to start the game");
 
 $(start).text("Click here to start");
-
-$("#submitName").click(function() {
-
-  var playerOne = ($("#playerOne").val());
-  var playerTwo = ($("#playerTwo").val());
-  $("#playerOneName").text(playerOne);
-  $("#playerTwoName").text(playerTwo);
-  $(".players").hide()
-
   showScores();
-})
 
 $(start).click(function() {
   if (!started) {
@@ -126,6 +119,9 @@ function startOver() {
 
 //show the players scores
 function showScores() {
+  $("#playerOneName").text(playerOneNameField);
+  $("#playerTwoName").text(playerTwoNameField);
+
   $("#playerOneScore").text("Score");
   $("#playerTwoScore").text("Score");
 
