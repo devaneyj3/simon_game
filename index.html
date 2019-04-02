@@ -3,69 +3,35 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Color Memory</title></title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <title>Color Memory</title>
+  <link rel="stylesheet" href="landingPage.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <h1 class="level-title"></h1>
-  <div class="container">
-    <table class="playerNames">
-      <tr>
-        <th class="playersAndHighScore" id="playerOneName"></th>
-        <th class="playersAndHighScore" id="playerTwoName"></th>
-      </tr>
-      <tr>
-        <td class="playersAndHighScore" id="playerOneScore"></td>
-        <td class="playersAndHighScore" id="playerTwoScore"></td>
-      </tr>
-      <tr>
-        <td class="playerOneScore"></td>
-        <td class="playerTwoScore"></td>
-      </tr>
-      <tr>
-        <td class="playersAndHighScore" id="playerOneHighScore"></td>
-        <td class="playersAndHighScore" id="playerTwoHighScore"></td>
-      </tr>
-      <tr>
-        <td class="playerOneHighScore"></td>
-        <td class="playerTwoHignScore"></td>
-      </tr>
-    </table>
-    <p class="finishedLevel"></p>
-  </div>
-  <div lass="row">
-
-    <div type="button" id="green" class="btn green">
-
-    </div>
-
-    <div type="button" id="red" class="btn red">
-
-    </div>
-  </div>
-
-  <div class="row">
-
-    <div type="button" id="yellow" class="btn yellow">
-
-    </div>
-    <div type="button" id="blue" class="btn blue">
-
-    </div>
-
-  </div>
-
-  <button class="start"></button>
-
+  <div class="container-fluid jumbotron">
+    <h2 class="welcome text-center"></h2>
+    <form class="margin">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="playerOneButton" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">One Players</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="playerTwoButton" value="option2">
+        <label class="form-check-label" for="exampleRadios2">Two Players</label>
+      </div>
+      <div class="form-row margin">
+        <div class="col text-center">
+          <input type="text" id="playerOne" class="form-control players" placeholder="Player One">
+          <input type="text" id="playerTwo" class="form-control players" placeholder="Player Two">
+          <a href="index.html"><button class="players btn btn-primary margin" id="submitName" type="button">Submit</button></a>
+          </div>
+        </div>
+    </form>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="landing.js" charset="utf-8"></script>
-  <script src="game.js" charset="utf-8"></script>
-
-
 </body>
 
 </html>
