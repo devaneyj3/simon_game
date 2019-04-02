@@ -3,7 +3,7 @@ body {
   background-color: #011F3F;
 }
 
-.playerNames {
+.playerNames, .finishedLevel {
   
   color: white;
   
