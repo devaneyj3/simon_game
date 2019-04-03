@@ -3,66 +3,87 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Color Memory</title></title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <title>Color Memory</title>
+  <link type="text/css" rel="stylesheet" href="styles.css">
+  <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 
-<body>
+<body class="jumbotron text-center">
   <h1 class="level-title"></h1>
-  <div class="container">
-    <table class="playerNames">
-      <tr>
-        <th class="playersAndHighScore" id="playerOneName"></th>
-        <th class="playersAndHighScore" id="playerTwoName"></th>
-      </tr>
-      <tr>
-        <td class="playersAndHighScore" id="playerOneScore"></td>
-        <td class="playersAndHighScore" id="playerTwoScore"></td>
-      </tr>
-      <tr>
-        <td class="playerOneScore"></td>
-        <td class="playerTwoScore"></td>
-      </tr>
-      <tr>
-        <td class="playersAndHighScore" id="playerOneHighScore"></td>
-        <td class="playersAndHighScore" id="playerTwoHighScore"></td>
-      </tr>
-      <tr>
-        <td class="playerOneHighScore"></td>
-        <td class="playerTwoHignScore"></td>
-      </tr>
-    </table>
-    <p class="finishedLevel"></p>
-  </div>
-  <div lass="row">
+  <div class="contain">
+    <div class="container">
+      <div class="playersAndHighScore">
+        <div class="row">
+          <div class="col">
+            <p id="playerOneName"></p>
+          </div>
+          <div class="col">
+            <p id="playerTwoName"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p id="playerOneScore"></p>
+          </div>
+          <div class="col">
+            <p id="playerTwoScore"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="playerOneScore"></p>
+          </div>
+          <div class="col">
+            <p class="playerTwoScore"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p id="playerOneHighScore"></p>
+          </div>
+          <div class="col">
+            <p id="playerTwoHighScore"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="playerOneHighScore"></p>
+          </div>
+          <div class="col">
+            <p class="playerTwoHignScore"></p>
+          </div>
+        </div>
+      </div>
+      <p class="finishedLevel"></p>
+    </div>
+    <div class="buttonRow">
 
-    <div type="button" id="green" class="btn green">
+      <button type="button" id="green" class="buttonColor green">
+  </button>
+
+      <button type="button" id="red" class="buttonColor red">
+
+      </button>
+    </div>
+
+    <div class="buttonRow">
+
+      <button type="button" id="yellow" class="buttonColor yellow">
+
+      </button>
+      <button type="button" id="blue" class="buttonColor blue">
+
+      </button>
 
     </div>
 
-    <div type="button" id="red" class="btn red">
-
-    </div>
-  </div>
-
-  <div class="row">
-
-    <div type="button" id="yellow" class="btn yellow">
-
-    </div>
-    <div type="button" id="blue" class="btn blue">
-
-    </div>
+    <button class=" btn btn-primary start"></button>
 
   </div>
 
-  <button class="start"></button>
-
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="game.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="game.js" charset="utf-8"></script>
 
 
 </body>

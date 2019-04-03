@@ -20,8 +20,8 @@ var playerTwoNameField = localStorage.getItem("NamePlayerTwo");
 
 $(levelHeading).text("Click the button below to start the game");
 
-$(start).text("Click here to start");
-  showScores();
+$(start).text("Start");
+showScores();
 
 $(start).click(function() {
   if (!started) {
@@ -32,7 +32,7 @@ $(start).click(function() {
 });
 
 
-$(".btn").click(function() {
+$(".buttonColor").click(function() {
 
   var userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
@@ -118,21 +118,27 @@ function startOver() {
 }
 
 //show the players scores
+//// TODO: to much repetition
 function showScores() {
-  $("#playerOneName").text(playerOneNameField);
-  $("#playerTwoName").text(playerTwoNameField);
+  if (playerTwoNameField) {
+    $("#playerOneName").text(playerOneNameField);
+    $("#playerOneScore").text("Score");
+    $(".playerOneScore").text(playerOneScore);
+    $("#playerOneHighScore").text("High Score");
+    $(".playerOneHighScore").text(playerOneHighScore);
 
-  $("#playerOneScore").text("Score");
-  $("#playerTwoScore").text("Score");
-
-  $(".playerOneScore").text(playerOneScore);
-  $(".playerTwoScore").text(playerTwoScore);
-
-  $("#playerOneHighScore").text("High Score");
-  $("#playerTwoHighScore").text("High Score");
-
-  $(".playerOneHighScore").text(playerOneHighScore);
-  $(".playerTwoHignScore").text(playerTwoHighScore);
+    $("#playerTwoName").text(playerTwoNameField);
+    $("#playerTwoScore").text("Score");
+    $(".playerTwoScore").text(playerTwoScore);
+    $("#playerTwoHighScore").text("High Score");
+    $(".playerTwoHignScore").text(playerTwoHighScore);
+  } else if (playerOneNameField) {
+    $("#playerOneName").text(playerOneNameField);
+    $("#playerOneScore").text("Score");
+    $(".playerOneScore").text(playerOneScore);
+    $("#playerOneHighScore").text("High Score");
+    $(".playerOneHighScore").text(playerOneHighScore);
+}
 }
 
 function updateHighScore() {
