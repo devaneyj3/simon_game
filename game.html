@@ -4,83 +4,40 @@
 <head>
   <meta charset="utf-8">
   <title>Color Memory</title>
-  <link type="text/css" rel="stylesheet" href="styles.css">
-  <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/game.css">
+  <!-- <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
   <link type="text/css" href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 
-<body class="jumbotron text-center">
+<body>
   <h1 class="level-title"></h1>
-  <div class="contain">
-    <div class="container">
-      <div class="playersAndHighScore">
-        <div class="row">
-          <div class="col">
-            <p id="playerOneName"></p>
-          </div>
-          <div class="col">
-            <p id="playerTwoName"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p id="playerOneScore"></p>
-          </div>
-          <div class="col">
-            <p id="playerTwoScore"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p class="playerOneScore"></p>
-          </div>
-          <div class="col">
-            <p class="playerTwoScore"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p id="playerOneHighScore"></p>
-          </div>
-          <div class="col">
-            <p id="playerTwoHighScore"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p class="playerOneHighScore"></p>
-          </div>
-          <div class="col">
-            <p class="playerTwoHignScore"></p>
-          </div>
-        </div>
-      </div>
-      <p class="finishedLevel"></p>
-    </div>
-    <div class="buttonRow">
-
-      <button type="button" id="green" class="buttonColor green">
-  </button>
-
-      <button type="button" id="red" class="buttonColor red">
-
-      </button>
-    </div>
-
-    <div class="buttonRow">
-
-      <button type="button" id="yellow" class="buttonColor yellow">
-
-      </button>
-      <button type="button" id="blue" class="buttonColor blue">
-
-      </button>
-
-    </div>
-
-    <button class=" btn btn-primary btn-lg start"></button>
-
+  <div class="playersAndHighScore">
+    <section class="names">
+      <p class="playerOneName"></p>
+      <p class="playerTwoName"></p>
+    </section>
+    <section class="score">
+      <p class="playerOneScore">Score: </p>
+      <p class="playerTwoScore">Score:</p>
+    </section>
+    <section class="highScore">
+      <p class="playerOneHighScore">High Score: </p>
+      <p class="playerTwoHighScore">High Score: </p>
+    </section>
   </div>
+  <p class="finishedLevel"></p>
+  <div class="buttonRow">
+    <section class="top-buttons">
+      <button type="button" id="green" class="button green"></button>
+      <button type="button" id="red" class="button red"></button>
+    </section>
+    <section class="bottom-buttons">
+      <button type="button" id="yellow" class="button yellow"></button>
+      <button type="button" id="blue" class="button blue"></button>
+    </section>
+  </div>
+  <button class="start"></button>
+
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="game.js" charset="utf-8"></script>

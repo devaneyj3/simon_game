@@ -32,11 +32,11 @@ $(start).click(function() {
 });
 
 
-$(".buttonColor").click(function() {
+$(".button").click(function() {
 
   var userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
-
+  console.log(userClickedPattern);
   playSound(userChosenColour);
   animatePress(userChosenColour);
 
@@ -88,8 +88,9 @@ function nextSequence() {
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);
+  console.log(gamePattern);
 
-  $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+  $("." + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
   playSound(randomChosenColour);
 }
 
@@ -101,9 +102,9 @@ function playSound(name) {
 
 //Once user presses a button, animated that button
 function animatePress(currentColor) {
-  $("#" + currentColor).addClass("pressed");
+  $("." + currentColor).addClass("pressed");
   setTimeout(function() {
-    $("#" + currentColor).removeClass("pressed");
+    $("." + currentColor).removeClass("pressed");
   }, 100);
 }
 
@@ -111,7 +112,7 @@ function animatePress(currentColor) {
 function startOver() {
   level = 0;
   playerOneScore = 0;
-  playerTwoScore = 0
+  playerTwoScore = 0;
   gamePattern = [];
   started = false;
   showScores();
@@ -121,23 +122,17 @@ function startOver() {
 //// TODO: to much repetition
 function showScores() {
   if (playerTwoNameField) {
-    $("#playerOneName").text(playerOneNameField);
-    $("#playerOneScore").text("Score");
-    $(".playerOneScore").text(playerOneScore);
-    $("#playerOneHighScore").text("High Score");
-    $(".playerOneHighScore").text(playerOneHighScore);
+    $(".playerOneName").text(playerOneNameField);
+    $(".playerOneScore").append(playerOneScore);
+    $(".playerOneHighScore").append(playerOneHighScore);
 
-    $("#playerTwoName").text(playerTwoNameField);
-    $("#playerTwoScore").text("Score");
-    $(".playerTwoScore").text(playerTwoScore);
-    $("#playerTwoHighScore").text("High Score");
-    $(".playerTwoHignScore").text(playerTwoHighScore);
+    $(".playerTwoName").append(playerTwoNameField);
+    $(".playerTwoScore").append(playerTwoScore);
+    $(".playerTwoHighScore").append(playerTwoHighScore);
   } else if (playerOneNameField) {
-    $("#playerOneName").text(playerOneNameField);
-    $("#playerOneScore").text("Score");
-    $(".playerOneScore").text(playerOneScore);
-    $("#playerOneHighScore").text("High Score");
-    $(".playerOneHighScore").text(playerOneHighScore);
+    $(".playerOneName").text(playerOneNameField);
+    $(".playerOneScore").append(playerOneScore);
+    $(".playerOneHighScore").append(playerOneHighScore);
 }
 }
 

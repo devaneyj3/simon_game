@@ -1,9 +1,7 @@
-
-.margin {
+body form {
   margin-top: 10%;
 }
-
-.submitButton {
+body button {
   margin-top: 10%;
   font-size: 40px !important;
 }
