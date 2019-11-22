@@ -119,25 +119,34 @@ function startOver() {
 }
 
 //show the players scores
-//// TODO: to much repetition
+
 function showScores() {
   if (playerTwoNameField) {
-    $(".playerOneName").text(playerOneNameField);
-    $(".playerOneScore").append(playerOneScore);
-    $(".playerOneHighScore").append(playerOneHighScore);
-
-    $(".playerTwoName").append(playerTwoNameField);
-    $(".playerTwoScore").append(playerTwoScore);
-    $(".playerTwoHighScore").append(playerTwoHighScore);
+    twoPlayers();
+    
   } else if (playerOneNameField) {
-    $(".playerOneName").text(playerOneNameField);
-    $(".playerOneScore").append(playerOneScore);
-    $(".playerOneHighScore").append(playerOneHighScore);
-}
+    onePlayer();
+  }
 }
 
 function updateHighScore() {
   if (playerOneScore > playerOneHighScore) {
     playerOneHighScore = playerOneScore;
   }
+}
+
+function twoPlayers(){
+  $(".playerOneName").text(playerOneNameField);
+  $(".playerOneScore").text(playerOneScore);
+  $(".playerOneHighScore").text(playerOneHighScore);
+
+  $(".playerTwoName").text(playerTwoNameField);
+  $(".playerTwoScore").text(playerTwoScore);
+  $(".playerTwoHighScore").text(playerTwoHighScore);
+}
+
+function onePlayer() {
+  $(".playerOneName").text(playerOneNameField);
+  $(".playerOneScore").text(playerOneScore);
+  $(".playerOneHighScore").text(playerOneHighScore);
 }

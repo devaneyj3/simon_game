@@ -1,7 +1,15 @@
-body form {
-  margin-top: 10%;
+body {
+  margin-left: 5%;
+}
+body .welcome {
+  text-align: center;
 }
 body button {
-  margin-top: 10%;
-  font-size: 40px !important;
+  margin-top: 1%;
+}
+body .radio {
+  margin-top: 1%;
+}
+body .input {
+  margin-top: 1%;
 }

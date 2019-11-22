@@ -5,28 +5,25 @@
   <meta charset="utf-8">
   <title>Color Memory</title>
   <link rel="stylesheet" href="css/index.css">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 
-<body class="jumbotron container-fluid">
+<body>
   
-  <h2 class="welcome text-center"></h2>
+  <h2 class="welcome"></h2>
   <form>
-    <div class="form-check">
+    <section class="radio" class="form-check">
       <input class="form-check-input" type="radio" name="exampleRadios" id="playerOneButton" value="option1">
       <label class="form-check-label" for="exampleRadios1">One Players</label>
-    </div>
-    <div class="form-check">
+      <br>
       <input class="form-check-input" type="radio" name="exampleRadios" id="playerTwoButton" value="option2">
       <label class="form-check-label" for="exampleRadios2">Two Players</label>
     </div>
-    <div class="form-row margin">
-      <div class="col text-center">
-        <input type="text" id="playerOne" class="form-control players" placeholder="Player One">
-        <input type="text" id="playerTwo" class="form-control players" placeholder="Player Two">
-        <a href="game.html"><button class="players btn btn-primary btn-lg" id="submitName" type="button">Submit</button></a>
-        </div>
-      </div>
+    <section class="input">
+      <input type="text" id="playerOne" class="form-control players" placeholder="Player One">
+      <input type="text" id="playerTwo" class="form-control players" placeholder="Player Two">
+    </div>
+    <button class="submitName">Submit</button>
   </form>
  
 
