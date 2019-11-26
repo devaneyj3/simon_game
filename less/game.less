@@ -11,21 +11,33 @@
     font-weight: bold;
 }
 
+.width(@width) {
+    width: @width;
+}
+
+.font-size(@size) {
+    font-size: @size;
+}
+
+.bgColor(@bgColor) {
+    background-color: @bgColor;
+}
+
 .button(@backgroundColor) {
-    background-color: @backgroundColor;
+    .bgColor(@backgroundColor);
     border: 1px solid black;
     border-radius: 20%;
-    width: 100px;
+    .width(100px);
     height: 100px;
     margin: 2%
 }
 
 body {
     text-align: center;
-    background-color: #011F3F;
+    .bgColor(#011F3F);
     .level-title {
         font-family: 'Press Start 2P', cursive;
-        font-size: 3rem;
+        .font-size(3rem);
         margin:  5%;
         color: #FEF2BF;
     }   
@@ -33,7 +45,7 @@ body {
         color: white;
     }
     .playersAndHighScore {
-        font-size: 2rem;
+        .font-size(2rem);
         .names {
             .flex(space-evenly);
             .playerOneName{
@@ -75,10 +87,10 @@ body {
     }
     .start {
         padding: 20px;
-        font-size: 60px;
+        .font-size(60px);
         margin-top: 20px;
-        width: 25%;
-        background-color: blue;
+        .width(25%);
+        .bgColor(blue);
 
     }  
 }
@@ -87,13 +99,13 @@ body {
 //Dynamically created classes
 
 .game-over {
-    background-color: red;
+    .bgColor(red);
     opacity: 0.8;
   }
   
   
   .pressed {
     box-shadow: 0 0 20px white;
-    background-color: grey;
+    .bgColor(grey);
   }
   
