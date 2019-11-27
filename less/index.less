@@ -1,20 +1,44 @@
 //Variables
 @margin-top: 1%;
 
+html {
+    font-size: 62.5%;
+}
+
 body {
-    margin-left: 5%;
+    background-color: cadetblue;
+    font-size: 4rem;
     .welcome {
         text-align: center;
     }
 
-    button {
-        margin-top: @margin-top;
-    };
-
-    .radio {
-        margin-top: @margin-top;
-    };
-    .input {
-        margin-top: @margin-top;
+    form {
+        display: flex;
+        justify-content: center;
+        .playerOneButton {
+            height: 35px;
+        };
+        .playerTwoButton {
+            height: 35px;
+        }
+        button {
+            margin-top: 10%;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        };
+        .radio {
+            margin-top: @margin-top;
+        };
+        .input {
+            margin-top: 30%;
+            #playerTwo {
+                margin-top: 30%;
+            }
+        }
+        .players {
+            text-align: -webkit-center;
+        }
     }
 }

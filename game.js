@@ -6,11 +6,11 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-var playerOneScore = 0;
-var playerTwoScore = 0;
+var playerOneScore = null;
+var playerTwoScore = null;
 
-var playerOneHighScore = 0;
-var playerTwoHighScore = 0;
+var playerOneHighScore = null;
+var playerTwoHighScore = null;
 
 var levelHeading = $(".level-title");
 var start = $(".start");

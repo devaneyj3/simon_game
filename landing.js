@@ -1,26 +1,33 @@
-$(".welcome").html("Welcome to Color Match. <br><p>How many players would you like.</p>");
+//jshint esversion: 6
 
-$(".players").hide();
-$(".submitName").hide();
+//Variables 
+let playerOneButton = document.getElementById('playerOneButton');
+let playerTwoButton = document.getElementById('playerTwoButton');
+let playerOneInput = document.getElementById('playerOne');
+let playerTwoInput = document.getElementById('playerTwo');
+let submitNameBtn = document.querySelector('.submitName');
 
-$("#playerOneButton").click(function() {
+playerOneInput.style.display = 'none';
+playerTwoInput.style.display = 'none';
+submitNameBtn.style.display = 'none';
 
-  $("#playerOne").show();
-  $(".submitName").show();
-  $("#playerTwo").hide();
+playerOneButton.addEventListener('click', () => {
+    playerOneInput.style.display = 'block';
+    submitNameBtn.style.display = 'block';
 });
 
-$("#playerTwoButton").click(function(){
-  $(".players").show();
-
+playerTwoButton.addEventListener('click', () => {
+  playerOneInput.style.display = 'block';
+  playerTwoInput.style.display = 'block';
+  submitNameBtn.style.display = 'block';
 });
 
- $(".submitName").click( function() {
+submitNameBtn.addEventListener('click', () => {
 
-   var playerOne = $("#playerOne").val();
-   var playerTwo = $("#playerTwo").val();
+  let playerOneValue = playerOneInput.value;
+  let playerTwoValue = playerTwo.value;
 
-   localStorage.setItem("NamePlayerOne", playerOne);
-   localStorage.setItem("NamePlayerTwo", playerTwo);
+  localStorage.setItem("NamePlayerOne", playerOneValue);
+  localStorage.setItem("NamePlayerTwo", playerTwoValue);
 
- });
+});

@@ -1,15 +1,39 @@
+html {
+  font-size: 62.5%;
+}
 body {
-  margin-left: 5%;
+  background-color: cadetblue;
+  font-size: 4rem;
 }
 body .welcome {
   text-align: center;
 }
-body button {
+body form {
+  display: flex;
+  justify-content: center;
+}
+body form .playerOneButton {
+  height: 35px;
+}
+body form .playerTwoButton {
+  height: 35px;
+}
+body form button {
+  margin-top: 10%;
+}
+body form button a {
+  text-decoration: none;
+  color: black;
+}
+body form .radio {
   margin-top: 1%;
 }
-body .radio {
-  margin-top: 1%;
+body form .input {
+  margin-top: 30%;
 }
-body .input {
-  margin-top: 1%;
+body form .input #playerTwo {
+  margin-top: 30%;
+}
+body form .players {
+  text-align: -webkit-center;
 }
