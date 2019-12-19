@@ -1,5 +1,6 @@
+@import 'mixins';
 //Variables
-@margin-top: 1%;
+@height: 35px;
 
 html {
     font-size: 62.5%;
@@ -13,28 +14,27 @@ body {
     }
 
     form {
-        display: flex;
-        justify-content: center;
+        .flex(center);
         .playerOneButton {
-            height: 35px;
+            height: @height;
         };
         .playerTwoButton {
-            height: 35px;
+            height: @height;
         }
         button {
-            margin-top: 10%;
+            .margin-top(10%);
             a {
                 text-decoration: none;
                 color: black;
             }
         };
         .radio {
-            margin-top: @margin-top;
+            .margin-top(1%);
         };
         .input {
-            margin-top: 30%;
+            .margin-top(30%);
             #playerTwo {
-                margin-top: 30%;
+                .margin-top(30%);
             }
         }
         .players {
